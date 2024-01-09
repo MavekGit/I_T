@@ -34,14 +34,13 @@ typedef logic signed [Y_W-1:0] y_t;
 
 // <challenge!>
 
-// variables need for quadratic polynomial
 typedef logic [7:0] x1_t;
 typedef logic [7:0] a_t;
 typedef logic [7:0] b_t;
 typedef logic [7:0] c_t;
 typedef logic [7:0] x2_t;
 typedef logic [7:0] sq_t;
-typedef logic 			y_t;
+
 
 localparam int R_F = 4;
 

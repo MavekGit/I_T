@@ -36,12 +36,22 @@ module quadra_top
 	
 	 
 	 
-	initial
-		begin
-			$dumpfile("dump.vcd"); 
-			$dumpvars(0, quadra_top);
+	// write quadra_top output to file dump.vcd
+	initial begin
+		
+		$fopen("dump.vcd", "w");
 
+        $fwrite(f, "#0\n");
+        $fwrite(f, "$dumpvars(0, quadra_top)\n");
+        $fwrite(f, "$end\n");
+
+        $fwrite(f, "#1\n");
+        $fwrite(f, "$dumpvars\n");
+        $fwrite(f, "y = %b\n", y);
+        $fwrite(f, "$end\n");
+		
 		end
 	 
 
+	 
 endmodule
